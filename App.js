@@ -16,11 +16,11 @@ const rl = readline.createInterface({
 
 // Ruta que recibe el JSON para configurar el scraping
 app.post('/scrape', async (req, res) => {
-    const { paginacion, navbutton, activebutton, iniUrl, url1, url2, url3, url4, selectors } = req.body;
+    const { ExcelName, paginacion, navbutton, activebutton, iniUrl, url1, url2, url3, url4, selectors } = req.body;
 
     try {
         // Llama a la función scrape con los nuevos valores
-        const data = await scrape(paginacion, navbutton, activebutton, iniUrl, url1, url2, url3, url4, selectors);
+        const data = await scrape(ExcelName, paginacion, navbutton, activebutton, iniUrl, url1, url2, url3, url4, selectors);
         res.json({ success: true, data });
 
     } catch (error) {
@@ -34,7 +34,7 @@ app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
 
-async function scrape(paginacion, navbutton, activebutton, iniUrl, url1, url2, url3, url4, selectors) {
+async function scrape(ExcelName, paginacion, navbutton, activebutton, iniUrl, url1, url2, url3, url4, selectors) {
     // ----------------------------- En caso de boton de Paginacion = true -----------------------------
     if (paginacion) {
         const startTime = Date.now();
@@ -179,20 +179,7 @@ async function scrape(paginacion, navbutton, activebutton, iniUrl, url1, url2, u
         const wb = XLSX.utils.book_new();
         const ws = XLSX.utils.json_to_sheet(allProducts);
         XLSX.utils.book_append_sheet(wb, ws, 'Productos');
-
-        // Generar el archivo Excel como un ArrayBuffer
-        const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-
-        // Crear un Blob a partir del ArrayBuffer
-        const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
-
-        // Crear un enlace para descargar el archivo
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = `${ExcelName}.xlsx`; // Especifica el nombre del archivo
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        XLSX.writeFile(wb, ExcelName + ".xlsx");
 
         await browser.close();
 
