@@ -1,0 +1,33 @@
+{
+    "paginacion": true,
+    "navbutton": "nav.woocommerce-pagination .page-numbers *",
+    "activebutton": "current",
+    "iniUrl": "https://figuesan.cl/categoria-producto/medicamentos/",
+    "url1": [
+        "https://figuesan.cl/categoria-producto/medicamentos/sistema-cardiovascular/",
+        "https://figuesan.cl/categoria-producto/perfumeria/"
+    ],
+    "url2": [
+        "https://figuesan.cl/categoria-producto/medicamentos/sistema-digestivo/",
+        "https://figuesan.cl/categoria-producto/medicamentos/suplementos-alimenticios/"
+    ],
+    "url3": [
+        "https://figuesan.cl/categoria-producto/medicamentos/",
+        "https://figuesan.cl/categoria-producto/dermocosmetica/"
+    ],
+    "url4": [
+        "https://figuesan.cl/categoria-producto/medicamentos/huesos-y-articulaciones/",
+        "https://figuesan.cl/categoria-producto/medicamentos/sistema-respiratorio-y-alergias/"
+    ],
+    "selectors": {
+        "Order": true,
+        "expRegular": "null",
+        "Link": "div.product-element-top.wd-quick-shop a.product-image-link",
+        "Productos": "div.shop-content-area div.products.wd-products-holder div.product-grid-item.product",
+        "Lab": "null",
+        "Nombre": ".wd-entities-title a",
+        "Precio": "div.product-rating-price .price",
+        "Oferta": "null",
+        "Img": "div.product-element-top.wd-quick-shop a img"
+    }
+}

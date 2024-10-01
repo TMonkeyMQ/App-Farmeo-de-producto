@@ -1,0 +1,31 @@
+{
+    "paginacion": false,
+    "navbutton": "null",
+    "activebutton": "div.show-more button.more",
+    "iniUrl": "https://www.farmaciasahumada.cl/medicamentos",
+    "url1": [
+        "https://www.farmaciasahumada.cl/mundo-mascota"
+    ],
+    "url2": [
+        "https://www.farmaciasahumada.cl/recetario-magistral",
+        "https://www.farmaciasahumada.cl/infantil-y-maternidad"
+    ],
+    "url3": [
+        "https://www.farmaciasahumada.cl/dispositivos-medicos"
+    ],
+    "url4": [
+        "https://www.farmaciasahumada.cl/infantil-y-maternidad",
+        "https://www.farmaciasahumada.cl/bebidas-y-alimentos"
+    ],
+    "selectors": {
+        "Order": false,
+        "expRegular": "/-(\\d+)\\.html$/",
+        "Link": "div.pdp-link a",
+        "Productos": "div.row.product-grid.equal-height div.col-6.col-sm-4.col-lg-3",
+        "Lab": "div.product-tile-brand span",
+        "Nombre": "div.pdp-link a",
+        "Precio": "div.price span.default-price .value",
+        "Oferta": "div.price del .value",
+        "Img": "img.tile-image"
+    }
+}

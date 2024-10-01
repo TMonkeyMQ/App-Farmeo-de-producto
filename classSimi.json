@@ -1,0 +1,53 @@
+{
+    "paginacion": false,
+    "navbutton": "null",
+    "activebutton": "div.vtex-search-result-3-x-buttonShowMore a",
+    "iniUrl": "https://www.drsimi.cl/dispositivos",
+    "url1": [
+        "https://www.drsimi.cl/medicamento/antialergicos",
+        "https://www.drsimi.cl/medicamento/antibioticos-y-antivirales",
+        "https://www.drsimi.cl/medicamento/antimicoticos",
+        "https://www.drsimi.cl/medicamento/cardiovascular",
+        "https://www.drsimi.cl/medicamento/control-del-peso",
+        "https://www.drsimi.cl/medicamento/diabetes",
+        "https://www.drsimi.cl/medicamento/enfermedades-especificas/tiroides"
+    ],
+    "url2": [
+        "https://www.drsimi.cl/medicamento/dolor-y-fiebre",
+        "https://www.drsimi.cl/medicamento/enfermedades-especificas/antihelminticos",
+        "https://www.drsimi.cl/medicamento/enfermedades-especificas/cancer-de-mamas",
+        "https://www.drsimi.cl/medicamento/enfermedades-especificas/inmunosupresores",
+        "https://www.drsimi.cl/medicamento/enfermedades-especificas/relajante-muscular",
+        "https://www.drsimi.cl/medicamento/sistema-nervioso"
+    ],
+    "url3": [
+        "https://www.drsimi.cl/higiene-personal",
+        "https://www.drsimi.cl/adulto-mayor?map=specificationFilter_41",
+        "https://www.drsimi.cl/medicamento/enfermedades-respiratorias",
+        "https://www.drsimi.cl/medicamento/gastrointestinal",
+        "https://www.drsimi.cl/medicamento/natural",
+        "https://www.drsimi.cl/medicamento/oftalmologia",
+        "https://www.drsimi.cl/cosmeticos"
+    ],
+    "url4": [
+        "https://www.drsimi.cl/bienestar-sexual",
+        "https://www.drsimi.cl/suplementos-y-alimentos",
+        "https://www.drsimi.cl/medicamento/salud-femenina",
+        "https://www.drsimi.cl/medicamento/salud-masculina",
+        "https://www.drsimi.cl/medicamento/uso-cronico-y-tratamientos",
+        "https://www.drsimi.cl/medicamento/dermatologia",
+        "https://www.drsimi.cl/medicamento/articulaciones",
+        "https://www.drsimi.cl/dispositivos"
+    ],
+    "selectors": {
+        "Order": false,
+        "Productos": "section div div div div.vtex-search-result-3-x-galleryItem.vtex-search-result-3-x-galleryItem--normal.vtex-search-result-3-x-galleryItem--grid ",
+        "expRegular": "null",
+        "Link": "section a.vtex-product-summary-2-x-clearLink",
+        "Lab": "null",
+        "Nombre": "div.vtex-product-summary-2-x-nameContainer h3 span",
+        "Precio": "div.vtex-flex-layout-0-x-flexRow--pricesQty span.vtex-product-price-1-x-sellingPriceValue",
+        "Oferta": "div.vtex-flex-layout-0-x-flexRow--pricesQty span.vtex-product-price-1-x-listPrice",
+        "Img": "div.vtex-product-summary-2-x-imageContainer img"
+    }
+}

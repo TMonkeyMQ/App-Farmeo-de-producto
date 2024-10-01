@@ -1,0 +1,32 @@
+{
+    "paginacion": true,
+    "navbutton": "ul.pagination li",
+    "activebutton": "active",
+    "iniUrl": "https://salcobrand.cl/t/cuidado-personal",
+    "url1": [
+        "https://salcobrand.cl/t/dermocoaching",
+        "https://salcobrand.cl/t/cuidado-personal"
+    ],
+    "url2": [
+        "https://salcobrand.cl/t/infantil-y-mama",
+        "https://salcobrand.cl/t/mascotas"
+    ],
+    "url3": [
+        "https://salcobrand.cl/t/adulto-mayor",
+        "https://salcobrand.cl/t/vitaminas-y-suplementos"
+    ],
+    "url4": [
+        "https://salcobrand.cl/t/belleza"
+    ],
+    "selectors": {
+        "Order": true,
+        "Productos": "div.product-catalog ul li.ais-Hits-item",
+        "expRegular": "/default_sku=(\\d+)/",
+        "Link": "div.product-image a",
+        "Lab": "div.italic.uppercase.cursor-pointer.text-12.hover\\:text-accent",
+        "Nombre": "div.info a span.product-name",
+        "Precio": "div.info a div.product-prices div.original-price span",
+        "Oferta": "div.info a div.product-prices div.sale-price span",
+        "Img": "div.product-image a img.img-responsive"
+    }
+}

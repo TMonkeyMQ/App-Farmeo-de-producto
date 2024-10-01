@@ -1,0 +1,36 @@
+{
+    "paginacion": true,
+    "navbutton": "nav.woocommerce-pagination ul.page-numbers *",
+    "activebutton": "current",
+    "iniUrl": "https://www.ecofarmacias.cl/categoria-producto/medicamentos/",
+    "url1": [
+        "https://www.ecofarmacias.cl/categoria-producto/medicamentos/"
+    ],
+    "url2": [
+        "https://www.ecofarmacias.cl/categoria-producto/cuidado-personal/articulos-adulto-mayor/",
+        "https://www.ecofarmacias.cl/categoria-producto/cuidado-personal/dermocosmetica/#",
+        "https://www.ecofarmacias.cl/categoria-producto/medicamentos/medicamentos-diabetes/",
+        "https://www.ecofarmacias.cl/categoria-producto/belleza/salud-sexual/"
+    ],
+    "url3": [
+        "https://www.ecofarmacias.cl/categoria-producto/suplementos-alimenticios/",
+        "https://www.ecofarmacias.cl/categoria-producto/veterinaria/",
+        "https://www.ecofarmacias.cl/categoria-producto/alimentos/"
+    ],
+    "url4": [
+        "https://www.ecofarmacias.cl/categoria-producto/belleza/",
+        "https://www.ecofarmacias.cl/categoria-producto/suplementos-alimenticios/nutricion-deportiva/",
+        "https://www.ecofarmacias.cl/categoria-producto/suplementos-alimenticios/salud-cardiovascular/"
+    ],
+    "selectors": {
+        "Order": true,
+        "Productos": "ul.products li.product",
+        "expRegular": "null",
+        "Link": "a",
+        "Lab": "null",
+        "Nombre": "a h2.woocommerce-loop-product__title",
+        "Precio": "a span.price",
+        "Oferta": "null",
+        "Img": "a span.et_shop_image img"
+    }
+}

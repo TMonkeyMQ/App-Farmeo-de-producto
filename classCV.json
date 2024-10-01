@@ -1,0 +1,33 @@
+{
+    "paginacion": true,
+    "navbutton": "div.rounded-full.flex.items-center.justify-center",
+    "activebutton": "bg-main!",
+    "iniUrl": "https://www.cruzverde.cl/medicamentos/dermatologia/",
+    "url1": [
+        "https://www.cruzverde.cl/bienestar-sexual/disfuncion-erectil/",
+        "https://www.cruzverde.cl/bienestar-sexual/lubricantes/"
+    ],
+    "url2": [
+        "https://www.cruzverde.cl/medicamentos/diabetes/",
+        "https://www.cruzverde.cl/medicamentos/dolor-y-fiebre/"
+    ],
+    "url3": [
+        "https://www.cruzverde.cl/medicamentos/monitores-de-salud-y-diagnostico/",
+        "https://www.cruzverde.cl/medicamentos/ojos-y-oidos/"
+    ],
+    "url4": [
+        "https://www.cruzverde.cl/medicamentos/sistema-respiratorio-y-alergias/",
+        "https://www.cruzverde.cl/medicamentos/suplementos-alimenticios/"
+    ],
+    "selectors": {
+        "Order": true,
+        "Productos": "div.col-span-4.lg\\:col-span-3 ml-card-product.ng-star-inserted",
+        "expRegular": "/\/(\\d+)\\.html$/",
+        "Link": "ml-product-image at-image a",
+        "Lab": "div.italic.uppercase.cursor-pointer.text-12.hover\\:text-accent",
+        "Nombre": "at-link a span",
+        "Precio": "ml-price-tag div.text-12.sm\\:text-14.line-through.order-3.ng-star-inserted",
+        "Oferta": "ml-price-tag div.text-12.sm\\:text-14.invisible.hidden.ng-star-inserted",
+        "Img": "ml-product-image at-image a img"
+    }
+}

@@ -1,0 +1,39 @@
+ En caso de que un selector no lo necesite o no se encuentra en el formato html debe rellenar con "null" en string
+{
+    "paginacion": true o false, // Si la pagina utiliza paginacion por navbar entonces es true, en 
+                                // caso de un boton para cargar mas productos entonces es false.
+    "navbutton": "", // Selector de etiqueta y clases que identifica los botones de navbar.
+    "activebutton": "", // Selector de etiqueta y clases que identifica el boton de navbar "ACTIVO".
+    "iniUrl": "", // URL que se abrira al iniciar la app para preparaciones prebias (definir ciudad, tamaño ventana, etc)
+    // urls que se abriran en las ventanas, cada url es una ventana y la lista de url que abrira para tomar productos.
+    "url1": [
+        "https://www.cruzverde.cl/medicamentos/suplementos-alimenticios/",
+        "https://www.cruzverde.cl/medicamentos/suplementos-alimenticios/"
+    ],
+    "url2": [
+        "",
+        ""
+    ],
+    "url3": [
+        "",
+        ""
+    ],
+    "url4": [
+        "",
+        ""
+    ],
+
+    "selectors": {
+        "Order": true o false, //Define el orden del precio y oferta, si en la pagina el precio oferta 
+                                //toma el lugar de precio normal y sus selectores, entonces es false.
+        "Productos": "", // Selector de etiqueta y clases que contiene un producto en general.
+        "expRegular": "", // Exprecion regular para recolectar el codigo de producto desde su link.
+        "Link": "", // selector de producto donde se encuentra su link, toma el href.
+        "Lab": "", // Selector de etiqueta y clases que contenga el laboratorio del producto.
+        "Nombre": "", // Selector de etiqueta y clases que contiene el nombre del producto.
+        "Precio": "", // Selector de etiqueta y clases que contiene el precio del producto.
+        "Oferta": "", //Selector de etiqueta y clases que contiene el precio de oferta del producto o 
+                    // precio normal en caso de que oferta tome los selectores del precio normal.
+        "Img": "" // Selector de etiqueta y clases que contiene el src de la imagen.
+    }
+}
