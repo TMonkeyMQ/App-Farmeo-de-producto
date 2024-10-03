@@ -1,10 +1,12 @@
 const { error } = require('console');
 const express = require('express');
 const { chromium } = require('playwright');
+const fs = require('fs');
 const app = express();
 const port = 3000;
 const readline = require('readline');
 const XLSX = require('xlsx');
+const path = require('path');
 
 // Middleware para recibir JSON
 app.use(express.json());
@@ -21,6 +23,7 @@ app.post('/scrape', async (req, res) => {
     try {
         // Llama a la función scrape con los nuevos valores
         const data = await scrape(ExcelName, paginacion, navbutton, activebutton, iniUrl, url1, url2, url3, url4, selectors);
+
         res.json({ success: true, data });
 
     } catch (error) {
@@ -29,17 +32,19 @@ app.post('/scrape', async (req, res) => {
     }
 });
 
+
 // url de api
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
 
+// funcion de scrap
 async function scrape(ExcelName, paginacion, navbutton, activebutton, iniUrl, url1, url2, url3, url4, selectors) {
     // ----------------------------- En caso de boton de Paginacion = true -----------------------------
     if (paginacion) {
         const startTime = Date.now();
-        const browser = await chromium.launch({ headless: false });
 
+        const browser = await chromium.launch({ headless: false });
         const context = await browser.newContext();
         const page1 = await context.newPage();
         const page2 = await context.newPage();
@@ -176,10 +181,18 @@ async function scrape(ExcelName, paginacion, navbutton, activebutton, iniUrl, ur
         console.log(`Total de productos extraídos: ${allProducts.length}`);
 
         console.log('Creando excel...');
+
+        if (!fs.existsSync(path.join(__dirname, 'Excels'))) {
+            fs.mkdirSync(path.join(__dirname, 'Excels'));
+        }
+
         const wb = XLSX.utils.book_new();
         const ws = XLSX.utils.json_to_sheet(allProducts);
         XLSX.utils.book_append_sheet(wb, ws, 'Productos');
-        XLSX.writeFile(wb, ExcelName + ".xlsx");
+        const excelPath = path.join(__dirname, 'Excels', `${ExcelName}.xlsx`);
+        XLSX.writeFile(wb, excelPath);
+
+        console.log(`Archivo Excel guardado en: ${excelPath}`);
 
         await browser.close();
 
@@ -194,7 +207,7 @@ async function scrape(ExcelName, paginacion, navbutton, activebutton, iniUrl, ur
 
         console.log(`Tiempo total: ${hrs}:${min}:${sec}`);
 
-        return allProducts;
+        return { allProducts, excelPath };
 
         /// --------------------- En Caso de NO paginacion y cargas de mas productos ------------------------------
     } else {
@@ -319,11 +332,18 @@ async function scrape(ExcelName, paginacion, navbutton, activebutton, iniUrl, ur
         console.log(`Total de productos extraídos: ${allProducts.length}`);
 
         // --------------------------- Pasar Array a Excel ---------------------------
-        console.log('Creando excel...');
+
+        if (!fs.existsSync(path.join(__dirname, 'Excels'))) {
+            fs.mkdirSync(path.join(__dirname, 'Excels'));
+        }
+
         const wb = XLSX.utils.book_new();
         const ws = XLSX.utils.json_to_sheet(allProducts);
         XLSX.utils.book_append_sheet(wb, ws, 'Productos');
-        XLSX.writeFile(wb, ExcelName);
+        const excelPath = path.join(__dirname, 'Excels', `${ExcelName}.xlsx`);
+        XLSX.writeFile(wb, excelPath);
+
+        console.log(`Archivo Excel guardado en: ${excelPath}`);
 
         await browser.close();
 
@@ -338,7 +358,7 @@ async function scrape(ExcelName, paginacion, navbutton, activebutton, iniUrl, ur
         console.log(`Tiempo total: ${hrs}:${min}:${sec}`);
 
 
-        return allProducts;
+        return { allProducts, excelPath };
 
     }
 }

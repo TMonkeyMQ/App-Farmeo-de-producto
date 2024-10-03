@@ -1,4 +1,5 @@
 {
+    "ExcelName": "ProductosFiguesan",
     "paginacion": true,
     "navbutton": "nav.woocommerce-pagination .page-numbers *",
     "activebutton": "current",
